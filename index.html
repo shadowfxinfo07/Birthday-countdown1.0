@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditi's Universe ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Premium Background Aesthetic: Moving Stars & Neon Orbs -->
+    <div class="space-bg">
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+    </div>
+    <div class="glow-orbs">
+        <div class="orb neon-cyan"></div>
+        <div class="orb neon-magenta"></div>
+        <div class="orb neon-yellow"></div>
+    </div>
+
+    <!-- Premium Audio Player Controller (Swapped to a much better synth-wave/lo-fi vibe) -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mp3">
+    </audio>
+    <div class="music-controller" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+        <span id="music-text">Tap For Main Theme Vibe</span>
+    </div>
+
+    <!-- ================= SCREEN 1: THE PORTAL PORTLET ================= -->
+    <div id="countdown-screen" class="glass-portal animate-fade-in">
+        <div class="premium-badge">⚡ MATRIX SYSTEM v1.9</div>
+        <h1 class="glitch-text">Aditi's Cosmic Day Loading...</h1>
+        
+        <!-- Premium Digital Clock -->
+        <div class="countdown-container">
+            <div class="time-circle"><span id="days">00</span><p>Days</p></div>
+            <div class="time-circle"><span id="hours">00</span><p>Hours</p></div>
+            <div class="time-circle"><span id="minutes">00</span><p>Mins</p></div>
+            <div class="time-circle"><span id="seconds">00</span><p>Secs</p></div>
+        </div>
+
+        <div class="info-ticker">
+            <p>🌌 Status: Time-stream syncing... Target: Nov 19</p>
+        </div>
+
+        <!-- Secret Developer Door for Her to Flex Early -->
+        <div class="secret-door">
+            <input type="password" id="passcode" placeholder="Enter Secret Code...">
+            <button onclick="checkPasscode()">Bypass System</button>
+        </div>
+    </div>
+
+    <!-- ================= SCREEN 2: THE FLEX HUB (Hidden at first) ================= -->
+    <div id="surprise-screen" class="glass-portal hidden">
+        <div class="premium-badge success">✨ LEVEL 19 UNLOCKED</div>
+        <h1 class="main-celebrate">HAPPY BIRTHDAY, ADITI! 🎉</h1>
+        
+        <!-- Scrolling Aesthetic Subtitle -->
+        <div class="typing-container">
+            <p class="sparkle-text">Welcome to your personal cyber-scrapbook space.</p>
+        </div>
+
+        <!-- Section: Personal Dashboard Data -->
+        <div class="stat-row">
+            <div class="stat-card">🌟 <br><span>100%</span><br>Coolest</div>
+            <div class="stat-card">🔥 <br><span>Infinite</span><br>Aura</div>
+            <div class="stat-card">👑 <br><span>Top Tier</span><br>Junior</div>
+        </div>
+
+        <!-- The Flex Grid: 3D Flip Cards Section -->
+        <h3 class="section-title">✨ TAP TO UNLOCK SECRETS</h3>
+        <div class="wish-grid">
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">🔮 The Cosmic Blessing</div>
+                    <div class="flip-card-back"><p>To the absolute coolest junior! May this chapter bring you endless success, killer grades, and top-tier memories! 🚀</p></div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">⭐ The Golden Rule</div>
+                    <div class="flip-card-back"><p>Keep shining, stay authentic, never stop working hard for your dreams, and keep spreading that amazing energy! 🌟</p></div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">✨ Daily Reminder</div>
+                    <div class="flip-card-back"><p>You're destined for huge things. Keep flexing your skills, stay awesome, and enjoy every bit of being nineteen! 👑</p></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Custom Quote Footer Card -->
+        <div class="quote-box">
+            <p class="quote-text">"Shine bright like the stars, because the universe looks better when you do." ✨</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

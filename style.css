@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #07030e;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* 🌌 STARFIELD & NEON BACKGROUND AESTHETIC */
+.space-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background: radial-gradient(circle at center, #140b2b 0%, #07030e 100%);
+}
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    animation: blink 3s infinite alternate;
+}
+.star:nth-child(1) { top: 15%; left: 20%; animation-delay: 0.2s; }
+.star:nth-child(2) { top: 35%; left: 80%; animation-delay: 0.8s; width: 4px; height: 4px; }
+.star:nth-child(3) { top: 75%; left: 15%; animation-delay: 0.5s; }
+.star:nth-child(4) { top: 85%; left: 75%; animation-delay: 1.2s; }
+.star:nth-child(5) { top: 50%; left: 50%; animation-delay: 0.1s; }
+.star:nth-child(6) { top: 20%; left: 65%; animation-delay: 1.5s; }
+.star:nth-child(7) { top: 60%; left: 85%; animation-delay: 0.4s; }
+
+@keyframes blink {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Glowing Dynamic Background Blurs */
+.glow-orbs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.45;
+    animation: floatingOrb 12s infinite alternate ease-in-out;
+}
+.neon-cyan { width: 300px; height: 300px; background: #00f5d4; top: -5%; left: -10%; }
+.neon-magenta { width: 350px; height: 350px; background: #ff007f; bottom: -5%; right: -10%; animation-delay: 3s; }
+.neon-yellow { width: 250px; height: 250px; background: #fee440; top: 40%; left: 75%; animation-delay: 6s; }
+
+@keyframes floatingOrb {
+    0% { transform: translate(0px, 0px) scale(1); }
+    100% { transform: translate(30px, 50px) scale(1.15); }
+}
+
+/* 🎵 MODERN FLOATING AUDIO CONTROLLER UI */
+.music-controller {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+.music-controller:active {
+    transform: scale(0.95);
+}
+
+/* TRANSLUCENT PREMIUM UI CONTAINER */
+.glass-portal {
+    background: rgba(18, 11, 32, 0.65);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 92%;
+    max-width: 460px;
+    padding: 35px 24px;
+    border-radius: 28px;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 0, 127, 0.1);
+    text-align: center;
+    z-index: 2;
+}
+
+.premium-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff007f, #7b2cbf);
+    padding: 6px 16px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+}
+.premium-badge.success {
+    background: linear-gradient(90deg, #00f5d4, #00bbf9);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.4);
+}
+
+.glitch-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00f5d4, #ff007f, #fee440);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 4s linear infinite;
+    margin-bottom: 30px;
+}
+@keyframes shineText {
+    to { background-position: 200% center; }
+}
+
+/* DIGITAL TIMER INTERFACES */
+.countdown-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.time-circle {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 82px;
+    height: 88px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 12px rgba(255,255,255,0.02);
+}
+.time-circle span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fee440;
+    text-shadow: 0 0 10px rgba(254, 228, 64, 0.3);
+}
+.time-circle p {
+    font-size: 0.65rem;
+    color: #b0a8c5;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.info-ticker {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #00f5d4;
+    border: 1px solid rgba(0, 245, 212, 0.1);
+    margin-bottom: 25px;
+}
+
+/* DEVELOPMENT SECRET BACKDOOR BOX */
+.secret-door {
+    display: flex;
+    gap: 8px;
+}
+.secret-door input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    color: #fff;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border 0.3s;
+}
+.secret-door input:focus {
+    border-color: #ff007f;
+}
+.secret-door button {
+    background: linear-gradient(45deg, #ff007f, #7b2cbf);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+}
+
+/* ================= SURPRISE SCREEN STYLING ================= */
+.main-celebrate {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fee440, #ff007f, #00f5d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+.sparkle-text {
+    font-size: 0.85rem;
+    color: #c3b9dd;
+    margin-bottom: 25px;
+}
+
+/* STAT TILES PILLS */
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.stat-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 12px 5px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    color: #a297c4;
+}
+.stat-card span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #00f5d4;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #ff007f;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 700;
+}
+
+/* 3D CARDS DECK LAYOUT */
+.wish-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+.flip-card {
+    background-color: transparent;
+    height: 95px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+.flip-card:active .flip-card-inner, .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+.flip-card-front {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #ccff33;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.flip-card-back {
+    background: linear-gradient(135deg, #240046, #5a189a);
+    border: 1px solid rgba(255, 0, 127, 0.3);
+    color: #f7efff;
+    transform: rotateY(180deg);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* PREMIUM FOOTER EMBED */
+.quote-box {
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 3px solid #00f5d4;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
+}
+.quote-text {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #b5aed4;
+    line-height: 1.4;
+}
+
+.hidden { display: none !important; }
