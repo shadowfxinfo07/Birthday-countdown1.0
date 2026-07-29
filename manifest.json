@@ -1,0 +1,26 @@
+{
+  "name": "Aditi's Birthday Experience",
+  "short_name": "Aditi",
+  "description": "A beautiful birthday surprise for Aditi.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090914",
+  "theme_color": "#ff3b8d",
+
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
